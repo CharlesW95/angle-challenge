@@ -42,7 +42,7 @@ class ProductSearchListView(generics.ListAPIView):
         """
         # Validate params
         query_params = self.request.query_params
-        keyword = query_params.get('keyword')
+        keyword = query_params.get("keyword")
         if keyword is None or len(keyword) == 0:
             raise APIException("keyword must be provided.")
 
@@ -50,8 +50,8 @@ class ProductSearchListView(generics.ListAPIView):
             "name__contains": keyword,
         }
 
-        min_price = query_params.get('min_price')
-        max_price = query_params.get('max_price')
+        min_price = query_params.get("min_price")
+        max_price = query_params.get("max_price")
         if min_price is not None:
             min_price = self.cast_int_or_fail(min_price, "min_price")
             filters["price__gte"] = min_price

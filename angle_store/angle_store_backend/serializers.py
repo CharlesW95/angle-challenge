@@ -7,7 +7,7 @@ from angle_store_backend.models import Product
 NAME_FIRST_LETTER_REGEX = r"^[0-9a-zA-Z]$"
 NAME_REMAINING_LETTERS_REGEX = r"^([0-9a-zA-Z]|\ |-)+$"
 
-DATE_FORMAT = '%m/%d/%Y'
+DATE_FORMAT = "%m/%d/%Y"
 
 
 class ProductSerializer(serializers.ModelSerializer):
